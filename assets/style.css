@@ -1,16 +1,28 @@
-.navbar-brand {
-    font-size: 36px;
+.search-column{
+    background-color:	#D3D3D3;
 }
 
-.search-header {
-    font-size: 24px;
-    font-weight: bold;
+.list-group-item{
+    line-height: 0.5;
+    border: none;
+}
+.card-body{
+    flex:auto
 }
 
-.city-name {
-    font-size: 30px;
+span.severe{
+    padding: 3px;
+    background-color: red;
+    color:white;
 }
 
-.forecast-date {
-    font-size: 18px;
+span.moderate{
+    padding: 3px;
+    background-color: yellow;
+}
+
+span.favorable{
+    padding: 3px;
+    background-color: green;
+    color:white;
 }
