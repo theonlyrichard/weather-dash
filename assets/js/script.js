@@ -2,9 +2,9 @@ var cities = [];
 
 var cityFormEl = document.querySelector("#city-search-form");
 var cityInputEl = document.querySelector("#city");
-var weatherContainerEl = document.querySelector("#current-weather-container");
+var weatherContainer = document.querySelector("#current-weather-container");
 var citySearchInputEl = document.querySelector("#searched-city");
-var forecastTitle = document.querySelector("#forecast");
+var forecastTitleEl = document.querySelector("#forecast");
 var forecastContainerEl = document.querySelector("#fiveday-container");
 var pastSearchButtonEl = document.querySelector("#past-search-buttons");
 
@@ -41,7 +41,7 @@ var getCityWeather = function (city) {
 
 var displayWeather = function (weather, searchCity) {
 
-    weatherContainerEl.textContent = "";
+    weatherContainer.textContent = "";
     citySearchInputEl.textContent = searchCity;
 
 
@@ -71,13 +71,13 @@ var displayWeather = function (weather, searchCity) {
     windSpeedEl.classList = "list-group-item"
 
     //append to container
-    weatherContainerEl.appendChild(temperatureEl);
+    weatherContainer.appendChild(temperatureEl);
 
     //append to container
-    weatherContainerEl.appendChild(humidityEl);
+    weatherContainer.appendChild(humidityEl);
 
     //append to container
-    weatherContainerEl.appendChild(windSpeedEl);
+    weatherContainer.appendChild(windSpeedEl);
 
     var lat = weather.coord.lat;
     var lon = weather.coord.lon;
@@ -116,7 +116,7 @@ var displayUvIndex = function (index) {
     uvIndexEl.appendChild(uvIndexValue);
 
     //append  to current weather
-    weatherContainerEl.appendChild(uvIndexEl);
+    weatherContainer.appendChild(uvIndexEl);
 }
 
 var get5Day = function (city) {
@@ -133,7 +133,7 @@ var get5Day = function (city) {
 
 var display5Day = function (weather) {
     forecastContainerEl.textContent = ""
-    forecastTitle.textContent = "5-Day Forecast:";
+    forecastTitleEl.textContent = "5-Day Forecast:";
 
     var forecast = weather.list;
     for (var i = 5; i < forecast.length; i = i + 8) {
